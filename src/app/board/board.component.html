@@ -1,0 +1,17 @@
+<div class="text-center" id="player-board">
+  <h1 class="text-center">Spooky Tic-Tac-Toe</h1>
+  <button (click)="newGame()">Start new Game</button>
+  <h2 *ngIf="winner && !tieGame">
+    {{ winner }} wins!
+  </h2>
+  <h2 *ngIf="!winner && !tieGame">
+    {{ player }}'s turn
+  </h2>
+  <h2 *ngIf="tieGame">
+    It's a tie game!
+  </h2>
+  <main>
+    <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
+    </app-square>
+  </main>
+</div>

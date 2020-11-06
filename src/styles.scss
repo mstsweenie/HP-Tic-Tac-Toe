@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&display=swap');
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin-left: 10px; 
+    font: normal small-caps bold 12px/30px 'Fruktur', cursive;
+    background-color: rgb(118, 0, 191); 
+}
+
+.h1, h1 {
+    font-size: 3rem;
+    color: rgb(240, 177, 16);
+}
+
+.h2, h2 { 
+    font-size: 2.5rem;
+    color: rgb(225, 86, 0);
+}

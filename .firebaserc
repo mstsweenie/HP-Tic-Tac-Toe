@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "spooky-tic-tac-toe": {
+      "hosting": {
+        "spooky-tic-tac-toe": [
+          "spooky-tic-tac-toe"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "spooky-tic-tac-toe"
+  }
+}
