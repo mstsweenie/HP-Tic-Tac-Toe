@@ -18,7 +18,7 @@ export class JoinGameGuard implements CanActivate {
         map(game => {
           
           if(game){
-            if (game['users'].length < 9)
+            if (game['users'].length < 2)
             {return true}
           }
           this.snackBar.open("A game with this ID does not exist or the room is full. Try again.", null, {

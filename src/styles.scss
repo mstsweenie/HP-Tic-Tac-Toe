@@ -7,7 +7,7 @@ html, body {
 body { 
     margin-left: 10px; 
     font: normal small-caps bold 12px/30px 'Fruktur', cursive;
-    background: rgb(118, 0, 191) url(/assets/hogwarts.png) no-repeat round;
+    background: rgb(118, 0, 191) url(/assets/hogwarts-lg.png) no-repeat center;
 }
     
 
@@ -23,3 +23,9 @@ body {
 .text-cneter{
     text-align: center;
 }
+
+@media only screen and (max-width: 900px) {
+    body {
+      background-image: url(/assets/hogwarts.png);
+    }
+  }
