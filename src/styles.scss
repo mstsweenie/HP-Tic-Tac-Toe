@@ -7,8 +7,9 @@ html, body {
 body { 
     margin-left: 10px; 
     font: normal small-caps bold 12px/30px 'Fruktur', cursive;
-    background-color: rgb(118, 0, 191); 
+    background: rgb(118, 0, 191) url(/assets/hogwarts.png) no-repeat round;
 }
+    
 
 .h1, h1 {
     font-size: 3rem;
@@ -18,4 +19,7 @@ body {
 .h2, h2 { 
     font-size: 2.5rem;
     color: rgb(225, 86, 0);
+}
+.text-cneter{
+    text-align: center;
 }
