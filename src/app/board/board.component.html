@@ -1,6 +1,6 @@
 <div class="text-center" id="player-board">
   <h1 class="text-center">HP Tic-Tac-Toe</h1>
-  <button mat-raised-button class="w-100" color="primary"(click)="newGame()">Start new Game</button>
+  <button mat-raised-button class="w-50" color="primary" (click)="newGame()">Start new Game</button>
   <h2 *ngIf="winner && !tieGame">
     {{ winner }} wins!
   </h2>
@@ -10,6 +10,11 @@
   <h2 *ngIf="tieGame">
     It's a tie game!
   </h2>
+  <div id="gryffindor-img" alt="Gryffindor crest"></div>
+  <div id="slytherin-img" alt="Slytherin crest"></div>
+  <button *ngIf="user && ready" (click)="logout()" mat-icon-button class="" aria-label="Logout">
+    Logout<mat-icon>logout</mat-icon>
+  </button>
   <main>
     <app-square *ngFor="let val of squares; let i = index" [value]="val" (click)="makeMove(i)">
     </app-square>

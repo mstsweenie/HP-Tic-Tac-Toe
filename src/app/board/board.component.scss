@@ -18,3 +18,19 @@ app-square {
     height: 200px;
     background-color: black;
 }
+
+button[aria-label="Logout"] {
+    color: #9b5d37;
+}
+
+#gryffindor-img {
+    width: 130px;
+    height: 160px;
+    background: transparent url(../../assets/housebadges.png) no-repeat 5px 5px;
+}
+
+#slytherin-img {
+    width: 130px;
+    height: 160px;
+    background: transparent url(../../assets/housebadges.png) no-repeat -126px -153px;
+}

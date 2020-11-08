@@ -14,7 +14,7 @@ export class JoinGameGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot):Observable<boolean> {
       
-      return this.FS.collection('hp tic-tac-toe').doc(`${next.params.gameId}`).valueChanges().pipe(
+      return this.FS.collection('hptic-tac-toe').doc(`${next.params.gameId}`).valueChanges().pipe(
         map(game => {
           
           if(game){
@@ -24,7 +24,7 @@ export class JoinGameGuard implements CanActivate {
           this.snackBar.open("A game with this ID does not exist or the room is full. Try again.", null, {
             duration: 5000,
           })
-          this.router.navigate(['/splash-page'])
+          this.router.navigate(['/splash'])
           return false;
         })
       );

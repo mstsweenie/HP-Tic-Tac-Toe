@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+//import { AuthenticationService } from './services/authentication.service'
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  items: Observable<any[]>;
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('items').valueChanges();
+  //  user;
+
+  constructor(/*private auth: AuthenticationService*/) {
+    //this.user = auth.authInfo;
   }
-  title = 'spooky-tic-tac-toe';
+
+  //  login() {
+  //    this.auth.login();
+  //  }
+  //
+  //  logout() {
+  //    this.auth.logout();
+  //  }
 }
