@@ -1,5 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-board',
@@ -13,8 +15,15 @@ export class BoardComponent implements OnInit {
   gameOver: boolean;
   tieGame: boolean;
   boardFull: boolean;
+  ready = false;
+  user;
 
-  constructor() { }
+  constructor(private userService: UserService, private auth: AngularFireAuth) {
+    this.auth.user.subscribe(v => {
+      this.user = v;
+      this.ready = true
+    });
+  }
 
   ngOnInit() {
     this.newGame();
@@ -29,7 +38,9 @@ export class BoardComponent implements OnInit {
     this.tieGame = false;
   }
 
-
+  logout() {
+    this.userService.logout();
+  }
 
   get player() {
     return this.xIsNext ? 'Bones' : 'Pumpkin';

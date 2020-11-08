@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './materialModule';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -14,21 +13,19 @@ import { BoardComponent } from './board/board.component';
 import { SquareComponent } from './square/square.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
-import { SplashPageComponent } from './splash-page/splash-page.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { HomeComponent } from './home/home.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+// import { AuthenticationService } from './services/authentication.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-   // LoginComponent,
-    SignupComponent,
+    LoginComponent,
     BoardComponent,
     SquareComponent,
-    SplashPageComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -39,11 +36,15 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
-    AngularFireModule.initializeApp(environment.firebase, 'HP Tic-Tac-Toe'),
+    AngularFireModule.initializeApp(environment.firebase, 'hptic-tac-toe'),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MDBBootstrapModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    //AuthenticationService,
+    UserService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
