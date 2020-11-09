@@ -1,7 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { UserService } from '../services/user.service';
+import { SocketService } from '../services/socket.service';
 
 @Component({
   selector: 'app-board',
@@ -18,7 +18,7 @@ export class BoardComponent implements OnInit {
   ready = false;
   user;
 
-  constructor(private userService: UserService, private auth: AngularFireAuth) {
+  constructor(private userService: UserService, private auth: AngularFireAuth, private socketService: SocketService) {
     this.auth.user.subscribe(v => {
       this.user = v;
       this.ready = true
@@ -47,6 +47,8 @@ export class BoardComponent implements OnInit {
   }
 
   makeMove(idx: number) {
+    console.log(idx);
+    this.socketService.PlayerMove(idx);
     if (!this.gameOver) {
       if (!this.squares[idx]) {
         this.squares.splice(idx, 1, this.player);
@@ -62,6 +64,7 @@ export class BoardComponent implements OnInit {
         } else {
           this.winner = 'Slytherin';
         }
+        this.socketService.SendWinner(this.winner)
         this.gameOver = true;
       }
       if (boardFull && this.winner === null) {
