@@ -43,7 +43,7 @@ export class BoardComponent implements OnInit {
   }
 
   get player() {
-    return this.xIsNext ? 'HP' : 'Malfoy';
+    return this.xIsNext ? 'Potter' : 'Malfoy';
   }
 
   makeMove(idx: number) {
@@ -56,6 +56,12 @@ export class BoardComponent implements OnInit {
       this.winner = this.calculateWinner();
       let boardFull = this.squares.every((val) => val !== null)
       if (boardFull || this.winner !== null) {
+        console.log(this.winner)
+        if (this.winner === 'Potter') {
+          this.winner = 'Gryffindor';
+        } else {
+          this.winner = 'Slytherin';
+        }
         this.gameOver = true;
       }
       if (boardFull && this.winner === null) {

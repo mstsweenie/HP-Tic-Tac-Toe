@@ -9,7 +9,7 @@ export class SquareComponent {
   fixture(fixture: any) {
     throw new Error('Method not implemented.');
   }
-  @Input() value: 'HP' | 'Malf'
+  @Input() value: 'Potter' | 'Malfoy'
 
 }
   //constructor() { }
