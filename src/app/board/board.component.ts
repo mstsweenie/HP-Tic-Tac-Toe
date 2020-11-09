@@ -43,7 +43,7 @@ export class BoardComponent implements OnInit {
   }
 
   get player() {
-    return this.xIsNext ? 'Bones' : 'Pumpkin';
+    return this.xIsNext ? 'HP' : 'Malfoy';
   }
 
   makeMove(idx: number) {
