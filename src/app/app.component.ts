@@ -17,7 +17,7 @@ export class AppComponent implements OnInit  {
   
   ngOnInit() { 
     const col = this.db.firestore.collection('Winners')
-    const query = col.where('House', '==', 'Gryffindor');
+    const query = col.where('Gryffindor', '==', 'Potter');
     query.get().then(snapshot => {
       snapshot.docs.forEach(doc => {
         console.log(doc.id, doc.data());
